@@ -1,4 +1,6 @@
 import { Upload, User } from "lucide-react";
+import Link from "next/link";
+import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import legalScaleIcon from "@/assets/legal-scale-icon.png";
 
@@ -11,10 +13,13 @@ export function Header({ onUploadClick }: HeaderProps) {
     <header className="h-16 bg-card border-b border-border flex items-center justify-between px-6">
       {/* Logo and Brand */}
       <div className="flex items-center gap-3">
-        <img 
-          src={legalScaleIcon} 
+        <Image 
+          src={legalScaleIcon}
           alt="LawWise Logo" 
           className="w-8 h-8"
+          width={32}
+          height={32}
+          priority
         />
         <h1 className="text-xl font-bold bg-gradient-primary bg-clip-text text-transparent">
           LawWise
@@ -23,8 +28,8 @@ export function Header({ onUploadClick }: HeaderProps) {
 
       {/* Navigation */}
       <nav className="hidden md:flex items-center gap-8">
-        <a href="#" className="text-foreground hover:text-primary transition-colors">Home</a>
-        <a href="#" className="text-muted-foreground hover:text-primary transition-colors">Features</a>
+        <Link href="/" className="text-foreground hover:text-primary transition-colors">Home</Link>
+        <Link href="/features" className="text-muted-foreground hover:text-primary transition-colors">Features</Link>
         <a href="#" className="text-muted-foreground hover:text-primary transition-colors">Pricing</a>
       </nav>
 
