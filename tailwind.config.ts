@@ -64,8 +64,17 @@ export default {
 				},
 				chat: {
 					user: 'hsl(var(--user-chat))',
-					ai: 'hsl(var(--ai-chat))'
+					ai: 'hsl(var(--ai-chat))',
+					'ai-foreground': 'hsl(var(--ai-chat-foreground))'
 				}
+			},
+			backgroundImage: {
+				'gradient-primary': 'var(--gradient-primary)',
+				'gradient-accent': 'var(--gradient-accent)',
+				'gradient-glow': 'var(--gradient-glow)'
+			},
+			boxShadow: {
+				'glow': 'var(--shadow-glow)'
 			},
 			borderRadius: {
 				lg: 'var(--radius)',

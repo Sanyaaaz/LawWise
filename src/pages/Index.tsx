@@ -25,6 +25,32 @@ const Index = () => {
     setIsUploadModalOpen(true);
   };
 
+  const handleTryDemo = () => {
+    // Simulate a demo document
+    const demoSummary: DocumentSummary = {
+      title: "Sample Employment Agreement (Demo)",
+      highlights: [
+        "Standard employment contract with 30-day notice period",
+        "Competitive salary with annual review clause", 
+        "Comprehensive benefits package including health and dental",
+        "Remote work flexibility with hybrid schedule option",
+        "Standard non-disclosure and non-compete agreements"
+      ],
+      actionableInsights: [
+        "Consider negotiating remote work terms for better work-life balance",
+        "The non-compete clause may limit future opportunities - review carefully"
+      ]
+    };
+    
+    setDocumentSummary(demoSummary);
+    setCurrentChatId("demo-" + Date.now().toString());
+  };
+
+  const handleClearChat = () => {
+    setDocumentSummary(undefined);
+    setCurrentChatId(null);
+  };
+
   const handleUploadComplete = (file: UploadedFile) => {
     // Simulate document processing and summary generation
     const summary: DocumentSummary = {
@@ -81,12 +107,15 @@ const Index = () => {
           onNewDocument={handleNewDocument}
           currentChatId={currentChatId}
           onSelectChat={handleSelectChat}
+          onClearChat={handleClearChat}
         />
         
         {/* Main Chat Area */}
         <ChatArea 
           documentSummary={documentSummary}
           currentChatId={currentChatId}
+          onTryDemo={handleTryDemo}
+          onClearChat={handleClearChat}
         />
         
         {/* Upload Modal */}
