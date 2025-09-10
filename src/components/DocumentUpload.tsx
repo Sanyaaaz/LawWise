@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog";
 import { Card } from "@/components/ui/card";
 
-interface UploadedFile {
+export interface UploadedFile {
   name: string;
   size: number;
   type: string;
@@ -14,6 +14,8 @@ interface DocumentUploadProps {
   isOpen: boolean;
   onClose: () => void;
   onUploadComplete: (file: UploadedFile) => void;
+  onFileUpload: (file: File) => void;
+  isUploading: boolean;
 }
 
 export function DocumentUpload({ isOpen, onClose, onUploadComplete }: DocumentUploadProps) {

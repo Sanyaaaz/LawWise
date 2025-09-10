@@ -28,9 +28,16 @@ export function Header({ onUploadClick }: HeaderProps) {
 
       {/* Navigation */}
       <nav className="hidden md:flex items-center gap-8">
-        <Link href="/" className="text-foreground hover:text-primary transition-colors">Home</Link>
-        <Link href="/features" className="text-muted-foreground hover:text-primary transition-colors">Features</Link>
-        <a href="#" className="text-muted-foreground hover:text-primary transition-colors">Pricing</a>
+        <Link href="/" className="text-foreground hover:text-primary transition-colors">
+          Home
+        </Link>
+        <Link href="/features" className="text-muted-foreground hover:text-primary transition-colors">
+          Features
+        </Link>
+        <Link href={{ pathname: "/pricing" }} className="text-foreground hover:text-accent transition-colors">
+  Pricing
+</Link>
+
       </nav>
 
       {/* Actions */}
